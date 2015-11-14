@@ -1,0 +1,16 @@
+{
+  "app": {
+    "couch_server":{
+      "url":"couchbase://127.0.0.1"
+    },
+    "user":{
+      "bucket_name":"user"
+    },
+    "group":{
+      "bucket_name":"group"
+    },
+    "item":{
+      "bucket_name":"item"
+    }
+  }
+}

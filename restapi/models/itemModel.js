@@ -1,6 +1,9 @@
 var couchbase = require('couchbase');
-var cluster = new couchbase.Cluster('couchbase://127.0.0.1');
-var bucket = cluster.openBucket('item');
+var config = require('config');
+var couchbaseurl = config.get('app.couch_server.url');
+var cluster = new couchbase.Cluster(couchbaseurl);
+var bucket_name = config.get('app.item.bucket_name');
+var bucket = cluster.openBucket(bucket_name);
 
 var item = {};
 
