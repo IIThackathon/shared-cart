@@ -5,15 +5,15 @@ var jwt = require('jsonwebtoken');
 
 var user = {};
 user.isLogin = function (login,callback) {
-    if(login.userName && login.password){
-        bucket.get(login.userName, function(err, result) {
+    if(login.userId && login.password){
+        bucket.get(login.userId, function(err, result) {
             if(err)
                 callback({message:"invalid user name"},null);
             else{
                 //match
                 if(result.value.password === login.password){
                     var token = jwt.sign(login, 'our super secret key');
-                    callback(err,{"token":token});
+                    callback(err,{"userName":result.value.userName,"token":token});
                 }else{
                     callback({message:"invalid password"},null);
                 }

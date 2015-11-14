@@ -7,6 +7,8 @@ var group = {};
 
 group.create = function(groupInput,callback){
     var groupId = uuid.v1();
+    var itemsId = uuid.v1();
+    groupInput.itemsId = itemsId;
     bucket.insert(groupId, groupInput, function(err, res) {
         if(err){
             callback({message:"oops! could not create group!"},null);
