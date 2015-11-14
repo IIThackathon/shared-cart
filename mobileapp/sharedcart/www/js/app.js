@@ -1,11 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('sharedcart', ['ionic','ngResource','starter.services'])
+angular.module('sharedcart', ['ionic','ngResource'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,59 +31,20 @@ angular.module('sharedcart', ['ionic','ngResource','starter.services'])
     })
     .state('mygroups', {
       url: '/mygroup',
-      templateUrl: 'templates/myGroups.html'
+      templateUrl: 'templates/myGroups.html',
+      controller: 'mygroupCtrl'
     })
     .state('group', {
       url: '/group',
-      templateUrl: 'templates/group.html'
+      templateUrl: 'templates/group.html',
+      controller: 'groupCtrl'
     }).
     state('view', {
       url: '/view',
-      templateUrl: 'templates/view.html'
-    })
+      templateUrl: 'templates/view.html',
+      controller: 'viewCtrl'
+    });
 
-  // Each tab has its own nav history stack:
-
-  /*.state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html'
-        //controller: 'DashCtrl'
-      }
-    }
-  });
-*/
-  /*.state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });*/
-
-  // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
 });
