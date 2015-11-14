@@ -11,6 +11,9 @@
     },
     "item":{
       "bucket_name":"item"
+    },
+    "auth":{
+      "secret_key":"my secret key"
     }
   }
 }
