@@ -7,5 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nirmal kumar Ravi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "couchbase": "^2.1.2",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-iife": "^0.2.4",
+    "gulp-nodemon": "^2.0.4",
+    "jsonwebtoken": "^5.4.1",
+    "morgan": "^1.6.1"
+  }
 }
